@@ -127,10 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Code.c" />
+    <ClCompile Include="Parser.c" />
     <ClCompile Include="Table.c" />
     <ClCompile Include="HackAssembler.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Code.h" />
+    <ClInclude Include="Parser.h" />
     <ClInclude Include="Table.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

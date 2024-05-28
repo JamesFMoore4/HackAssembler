@@ -1,6 +1,4 @@
 ﻿  HackAssembler.c
-  Table.c
-  Generating Code...
   HackAssembler.vcxproj -> D:\VSProjects\HackAssembler\x64\Debug\HackAssembler.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

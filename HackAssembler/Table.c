@@ -19,6 +19,24 @@ void initialize(Table* table)
 		fprintf(stderr, "Could not allocate memory for symbol table.");
 		exit(1);
 	}
+
+	char r[3] = "RX";
+	for (int i = 0; i < 10; i++)
+	{
+		r[1] = i + 48;
+		addEntry(table, r, i);
+	}
+	addEntry(table, "R10", 10);
+	addEntry(table, "R11", 11);
+	addEntry(table, "R12", 12);
+	addEntry(table, "R13", 13);
+	addEntry(table, "R14", 14);
+	addEntry(table, "R15", 15);
+	addEntry(table, "SP", 0);
+	addEntry(table, "LCL", 1);
+	addEntry(table, "ARG", 2);
+	addEntry(table, "THIS", 3);
+	addEntry(table, "THAT", 4);
 }
 
 void delete(Table* table)
