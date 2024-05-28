@@ -1,6 +1,4 @@
 #include "Table.h"
-#define INITIAL_TABLE_SIZE 32
-#define MAX_STRING_LENGTH 64
 
 void initialize(Table* table)
 {

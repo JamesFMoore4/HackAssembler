@@ -2,19 +2,21 @@
 #include <string.h>
 #include <stdbool.h>
 
-typedef enum {A_INSTRUCTION, C_INSTRUCTION, L_INSTRUCTION} Type;
+#include "Table.h"
+
+typedef enum {A_INSTRUCTION, C_INSTRUCTION, L_INSTRUCTION, NOT_INSTRUCTION} Type;
 
 bool hasMoreLines(FILE* input);
 
-Type instructionType(char* instr);
+Type instructionType(const char* instr);
 
-void symbol(char* instr, char* buffer);
+void symbol(const char* instr, char* buffer);
 
-void destP(char* instr, char* buffer);
+void destP(const char* instr, char* buffer);
 
-void compP(char* instr, char* buffer);
+void compP(const char* instr, char* buffer);
 
-void jumpP(char* instr, char* buffer);
+void jumpP(const char* instr, char* buffer);
 
 static bool containsP(const char* str, char c);
 

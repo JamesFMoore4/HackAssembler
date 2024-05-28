@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\VSProjects\\HackAssembler\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|D:\\VSProjects\\HackAssembler\\HackAssembler\\Parser.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|solutionrelative:HackAssembler\\Parser.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|D:\\VSProjects\\HackAssembler\\HackAssembler\\HackAssembler.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|solutionrelative:HackAssembler\\HackAssembler.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|D:\\VSProjects\\HackAssembler\\HackAssembler\\Parser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|solutionrelative:HackAssembler\\Parser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|D:\\VSProjects\\HackAssembler\\HackAssembler\\HackAssembler.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|solutionrelative:HackAssembler\\HackAssembler.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|D:\\VSProjects\\HackAssembler\\HackAssembler\\Parser.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|solutionrelative:HackAssembler\\Parser.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|D:\\VSProjects\\HackAssembler\\HackAssembler\\Table.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|solutionrelative:HackAssembler\\Table.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,19 +26,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "Table.h",
+              "DocumentMoniker": "D:\\VSProjects\\HackAssembler\\HackAssembler\\Table.h",
+              "RelativeDocumentMoniker": "HackAssembler\\Table.h",
+              "ToolTip": "D:\\VSProjects\\HackAssembler\\HackAssembler\\Table.h",
+              "RelativeToolTip": "HackAssembler\\Table.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-28T18:20:55.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Parser.c",
               "DocumentMoniker": "D:\\VSProjects\\HackAssembler\\HackAssembler\\Parser.c",
               "RelativeDocumentMoniker": "HackAssembler\\Parser.c",
               "ToolTip": "D:\\VSProjects\\HackAssembler\\HackAssembler\\Parser.c",
               "RelativeToolTip": "HackAssembler\\Parser.c",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAAAFMAAAADAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-28T14:06:40.603Z",
+              "WhenOpened": "2024-05-28T18:19:41.988Z",
               "EditorCaption": ""
             },
             {
@@ -45,20 +62,20 @@
               "RelativeDocumentMoniker": "HackAssembler\\Parser.h",
               "ToolTip": "D:\\VSProjects\\HackAssembler\\HackAssembler\\Parser.h",
               "RelativeToolTip": "HackAssembler\\Parser.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-28T14:06:37.494Z",
+              "WhenOpened": "2024-05-28T18:19:22.884Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "HackAssembler.c",
               "DocumentMoniker": "D:\\VSProjects\\HackAssembler\\HackAssembler\\HackAssembler.c",
               "RelativeDocumentMoniker": "HackAssembler\\HackAssembler.c",
               "ToolTip": "D:\\VSProjects\\HackAssembler\\HackAssembler\\HackAssembler.c",
               "RelativeToolTip": "HackAssembler\\HackAssembler.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-05-27T14:29:34.807Z",
               "EditorCaption": ""

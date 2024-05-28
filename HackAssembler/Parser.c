@@ -11,27 +11,29 @@ Type instructionType(const char* instr)
 		return A_INSTRUCTION;
 	else if (instr[0] == '(')
 		return L_INSTRUCTION;
+	else if (!strcmp(instr, ""))
+		return NOT_INSTRUCTION;
 	return C_INSTRUCTION;
 }
 
 void symbol(const char* instr, char* buffer)
 {
-	char temp[64];
+	char temp[MAX_STRING_LENGTH];
 	Type instrtype = instructionType(instr);
 	if (instrtype == L_INSTRUCTION)
 	{
 		int i = 0;
-		char temp[64];
+		char temp[MAX_STRING_LENGTH];
 		while (instr[i + 1] != ')')
 		{
 			temp[i] = instr[i + 1];
 			i++;
 		}
 		temp[i] = '\0';
-		strcpy_s(buffer, 64, temp);
+		strcpy_s(buffer, MAX_STRING_LENGTH, temp);
 	}
 	else
-		strcpy_s(buffer, 64, instr + 1);
+		strcpy_s(buffer, MAX_STRING_LENGTH, instr + 1);
 }
 
 void destP(const char* instr, char* buffer)
@@ -93,9 +95,8 @@ void jumpP(const char* instr, char* buffer)
 
 	if (present)
 	{
-		char *ptr = strchr(instr, ';'), temp[4];
+		char *ptr = strchr(instr, ';'), temp[] = "   ";
 		ptr++;
-		temp[3] = '\0';
 		int i = 0;
 		while (*ptr)
 			temp[i++] = *(ptr++);
