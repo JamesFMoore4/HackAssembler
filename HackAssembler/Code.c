@@ -114,5 +114,5 @@ void itob(char* buffer, int address)
 		else
 			temp[i] = '0';
 	}
-	strcpy_s(buffer, 16, temp);
+	strcpy_s(buffer, sizeof(temp), temp);
 }
