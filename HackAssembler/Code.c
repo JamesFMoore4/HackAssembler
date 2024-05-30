@@ -1,110 +1,143 @@
 #include "Code.h"
 
+char* destarg[] =
+{
+	"",
+	"M",
+	"D",
+	"DM",
+	"A",
+	"AM",
+	"AD",
+	"ADM"
+};
+
+char* destinstr[] =
+{
+	"000",
+	"001",
+	"010",
+	"011",
+	"100",
+	"101",
+	"110",
+	"111"
+};
+
+char* comparg[] =
+{
+	"0",
+	"1",
+	"-1",
+	"D",
+	"A",
+	"!D",
+	"!A",
+	"-D",
+	"-A",
+	"D+1",
+	"A+1",
+	"D-1",
+	"A-1",
+	"D+A",
+	"D-A",
+	"A-D",
+	"D&A",
+	"D|A",
+	"M",
+	"!M",
+	"-M",
+	"M+1",
+	"M-1",
+	"D+M",
+	"D-M",
+	"M-D",
+	"D&M",
+	"D|M"
+};
+
+char* compinstr[] =
+{
+	"0101010",
+	"0111111",
+	"0111010",
+	"0001100",
+	"0110000",
+	"0001101",
+	"0110001",
+	"0001111",
+	"0110011",
+	"0011111",
+	"0110111",
+	"0001110",
+	"0110010",
+	"0000010",
+	"0010011",
+	"0000111",
+	"0000000",
+	"0010101",
+	"1110000",
+	"1110001",
+	"1110011",
+	"1110111",
+	"1110010",
+	"1000010",
+	"1010011",
+	"1000111",
+	"1000000",
+	"1010101"
+};
+
+char* jumparg[] =
+{
+	"",
+	"JGT",
+	"JEQ",
+	"JGE",
+	"JLT",
+	"JNE",
+	"JLE",
+	"JMP"
+};
+
+char* jumpinstr[] =
+{
+	"000",
+	"001",
+	"010",
+	"011",
+	"100",
+	"101",
+	"110",
+	"111"
+};
+
 void dest(char* arg, char* buffer)
 {
-	if (arg[0] == '\0')
-		strcpy_s(buffer, 4, "000");
-	else if (!strcmp(arg, "M"))
-		strcpy_s(buffer, 4, "001");
-	else if (!strcmp(arg, "D"))
-		strcpy_s(buffer, 4, "010");
-	else if (!strcmp(arg, "DM"))
-		strcpy_s(buffer, 4, "011");
-	else if (!strcmp(arg, "A"))
-		strcpy_s(buffer, 4, "100");
-	else if (!strcmp(arg, "AM"))
-		strcpy_s(buffer, 4, "101");
-	else if (!strcmp(arg, "AD"))
-		strcpy_s(buffer, 4, "110");
-	else if (!strcmp(arg, "ADM"))
-		strcpy_s(buffer, 4, "111");
+	for (int i = 0; i < 8; i++)
+		if (!strcmp(destarg[i], arg))
+			strcpy_s(buffer, 4, destinstr[i]);
 }
 
 void comp(char* arg, char* buffer)
 {
-	if (!strcmp(arg, "0"))
-		strcpy_s(buffer, 8, "0101010");
-	else if (!strcmp(arg, "1"))
-		strcpy_s(buffer, 8, "0111111");
-	else if (!strcmp(arg, "-1"))
-		strcpy_s(buffer, 8, "0111010");
-	else if (!strcmp(arg, "D"))
-		strcpy_s(buffer, 8, "0001100");
-	else if (!strcmp(arg, "A"))
-		strcpy_s(buffer, 8, "0110000");
-	else if (!strcmp(arg, "!D"))
-		strcpy_s(buffer, 8, "0001101");
-	else if (!strcmp(arg, "!A"))
-		strcpy_s(buffer, 8, "0110001");
-	else if (!strcmp(arg, "-D"))
-		strcpy_s(buffer, 8, "0001111");
-	else if (!strcmp(arg, "-A"))
-		strcpy_s(buffer, 8, "0110011");
-	else if (!strcmp(arg, "D+1"))
-		strcpy_s(buffer, 8, "0011111");
-	else if (!strcmp(arg, "A+1"))
-		strcpy_s(buffer, 8, "0110111");
-	else if (!strcmp(arg, "D-1"))
-		strcpy_s(buffer, 8, "0001110");
-	else if (!strcmp(arg, "A-1"))
-		strcpy_s(buffer, 8, "0110010");
-	else if (!strcmp(arg, "D+A"))
-		strcpy_s(buffer, 8, "0000010");
-	else if (!strcmp(arg, "D-A"))
-		strcpy_s(buffer, 8, "0010011");
-	else if (!strcmp(arg, "A-D"))
-		strcpy_s(buffer, 8, "0000111");
-	else if (!strcmp(arg, "D&A"))
-		strcpy_s(buffer, 8, "0000000");
-	else if (!strcmp(arg, "D|A"))
-		strcpy_s(buffer, 8, "0010101");
-	else if (!strcmp(arg, "M"))
-		strcpy_s(buffer, 8, "1110000");
-	else if (!strcmp(arg, "!M"))
-		strcpy_s(buffer, 8, "1110001");
-	else if (!strcmp(arg, "-M"))
-		strcpy_s(buffer, 8, "1110011");
-	else if (!strcmp(arg, "M+1"))
-		strcpy_s(buffer, 8, "1110111");
-	else if (!strcmp(arg, "M-1"))
-		strcpy_s(buffer, 8, "1110010");
-	else if (!strcmp(arg, "D+M"))
-		strcpy_s(buffer, 8, "1000010");
-	else if (!strcmp(arg, "D-M"))
-		strcpy_s(buffer, 8, "1010011");
-	else if (!strcmp(arg, "M-D"))
-		strcpy_s(buffer, 8, "1000111");
-	else if (!strcmp(arg, "D&M"))
-		strcpy_s(buffer, 8, "1000000");
-	else if (!strcmp(arg, "D|M"))
-		strcpy_s(buffer, 8, "1010101");
+	for (int i = 0; i < 28; i++)
+		if (!strcmp(comparg[i], arg))
+			strcpy_s(buffer, 8, compinstr[i]);
 }
 
 void jump(char* arg, char* buffer)
 {
-	if (arg[0] == '\0')
-		strcpy_s(buffer, 4, "000");
-	else if (!strcmp(arg, "JGT"))
-		strcpy_s(buffer, 4, "001");
-	else if (!strcmp(arg, "JEQ"))
-		strcpy_s(buffer, 4, "010");
-	else if (!strcmp(arg, "JGE"))
-		strcpy_s(buffer, 4, "011");
-	else if (!strcmp(arg, "JLT"))
-		strcpy_s(buffer, 4, "100");
-	else if (!strcmp(arg, "JNE"))
-		strcpy_s(buffer, 4, "101");
-	else if (!strcmp(arg, "JLE"))
-		strcpy_s(buffer, 4, "110");
-	else if (!strcmp(arg, "JMP"))
-		strcpy_s(buffer, 4, "111");
+	for (int i = 0; i < 8; i++)
+		if (!strcmp(jumparg[i], arg))
+			strcpy_s(buffer, 4, jumpinstr[i]);
 }
 
 void itob(char* buffer, int address)
 {
 	char temp[16];
 	temp[15] = '\0';
-	for (int i = 0, power = 16384; i < 15; i++, power >>= 1)
+	for (int i = 0, power = (int)pow(2, 14); i < 15; i++, power >>= 1)
 	{
 		if (address - power >= 0)
 		{
@@ -115,4 +148,17 @@ void itob(char* buffer, int address)
 			temp[i] = '0';
 	}
 	strcpy_s(buffer, sizeof(temp), temp);
+}
+
+bool isValidPath(char* path)
+{
+	size_t pathlen = strlen(path);
+	if (pathlen < 5)
+		return false;
+
+	char* extension = path + pathlen - 4;
+	if (strcmp(extension, ".asm"))
+		return false;
+
+	return true;
 }

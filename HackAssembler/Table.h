@@ -27,4 +27,4 @@ int getAddress(const Table* table, char* symbol);
 
 static void increaseSize(Table* table);
 
-
+static void predefSym(Table* table);

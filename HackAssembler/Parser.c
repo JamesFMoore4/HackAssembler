@@ -18,18 +18,14 @@ Type instructionType(const char* instr)
 
 void symbol(const char* instr, char* buffer)
 {
-	char temp[MAX_STRING_LENGTH];
-	Type instrtype = instructionType(instr);
-	if (instrtype == L_INSTRUCTION)
+	if (instructionType(instr) == L_INSTRUCTION)
 	{
-		int i = 0;
 		char temp[MAX_STRING_LENGTH];
-		while (instr[i + 1] != ')')
-		{
-			temp[i] = instr[i + 1];
-			i++;
-		}
-		temp[i] = '\0';
+		int i, pos;
+		for (i = 0, pos = 0; instr[i]; i++)
+			if (instr[i] != '(' && instr[i] != ')')
+				temp[pos++] = instr[i];
+		temp[pos] = '\0';
 		strcpy_s(buffer, MAX_STRING_LENGTH, temp);
 	}
 	else
@@ -38,79 +34,68 @@ void symbol(const char* instr, char* buffer)
 
 void destP(const char* instr, char* buffer)
 {
-	bool present = containsP(instr, '=');
-	if (present)
+	if (containsP(instr, '='))
 	{
-		char dest[] = " ";
-		dest[0] = instr[0];
-		strcpy_s(buffer, 2, dest);
+		char dest[4];
+		int pos = 0;
+		while (*instr != '=')
+			dest[pos++] = *(instr++);
+		dest[pos] = '\0';
+		strcpy_s(buffer, 4, dest);
 	}
 	else
-		strcpy_s(buffer, 2, "");
+		strcpy_s(buffer, 1, "");
 }
 
 void compP(const char* instr, char* buffer)
 {
-	bool presentE = containsP(instr, '=');
-	bool presentS = containsP(instr, ';');
-	
-	int i;
-	char temp[4];
-	int count = 0;
-	temp[3] = '\0';
-	if (presentE && presentS)
-	{
-		i = 2;
-		while (instr[i] != ';')
-		{
-			temp[i++ - 2] = instr[i];
-			count++;
-		}
-	}
-	else if (presentS)
-	{
-		i = 0;
-		while (instr[i] != ';')
-		{
-			temp[i++] = instr[i];
-			count++;
-		}
-	}
-	else
-	{
-		i = 2;
-		while (instr[i] != '\0')
-		{
-			temp[i++ - 2] = instr[i];
-			count++;
-		}
-	}
-	temp[count] = '\0';
-	strcpy_s(buffer, 4, temp);
+	char* start = strchr(instr, '='), *end = strchr(instr, ';');
+	char temp[5];
+	if (!start++) start = instr;
+	if (!end--) end = instr + strlen(instr);
+	int pos = 0;
+	while (start <= end)
+		temp[pos++] = *(start++);
+	temp[pos] = '\0';
+	strcpy_s(buffer, 5, temp);
 }
 
 void jumpP(const char* instr, char* buffer)
 {
-	bool present = containsP(instr, ';');
-
-	if (present)
+	if (containsP(instr, ';'))
 	{
-		char *ptr = strchr(instr, ';'), temp[] = "   ";
-		ptr++;
+		char *ptr = strchr(instr, ';') + 1, temp[4];
 		int i = 0;
 		while (*ptr)
 			temp[i++] = *(ptr++);
+		temp[3] = '\0';
 		strcpy_s(buffer, 4, temp);
 	}
 	else
-		strcpy_s(buffer, 2, "");
+		strcpy_s(buffer, 1, "");
+}
+
+void trim(const char* instr, char* buffer)
+{
+	char temp[MAX_INSTR_LENGTH];
+	int i, pos;
+	for (i = 0, pos = 0; instr[i]; i++)
+	{
+		if (instr[i] == '/' && instr[i + 1] == '/')
+			break;
+		if (instr[i] == ' ' || instr[i] == '\t')
+			continue;
+		temp[pos++] = instr[i];
+	}
+	temp[pos] = '\0';
+	strcpy_s(buffer, MAX_INSTR_LENGTH, temp);
 }
 
 static bool containsP(const char* str, char c)
 {
-	bool present = false;
-	for (char* ptr = str; *ptr != '\0'; ptr++)
-		if (*ptr == c)
-			present = true;
-	return present;
+	for (; *str; str++)
+		if (*str == c)
+			return true;
+	return false;
 }
+

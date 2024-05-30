@@ -1,6 +1,4 @@
 ﻿  HackAssembler.c
-D:\VSProjects\HackAssembler\HackAssembler\HackAssembler.c(113,14): warning C4090: 'function': different 'const' qualifiers
-D:\VSProjects\HackAssembler\HackAssembler\HackAssembler.c(82,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   HackAssembler.vcxproj -> D:\VSProjects\HackAssembler\x64\Debug\HackAssembler.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
