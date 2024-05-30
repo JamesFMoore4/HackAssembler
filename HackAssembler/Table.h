@@ -5,7 +5,7 @@
 #include <string.h>
 
 #define INITIAL_TABLE_SIZE 32
-#define MAX_STRING_LENGTH 128
+#define MAX_SYMBOL_LENGTH 128
 
 typedef struct
 {

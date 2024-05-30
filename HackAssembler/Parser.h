@@ -4,7 +4,7 @@
 
 #include "Table.h"
 
-#define MAX_INSTR_LENGTH 256
+#define MAX_LINE_LENGTH 256
 
 typedef enum {A_INSTRUCTION, C_INSTRUCTION, L_INSTRUCTION, NOT_INSTRUCTION} Type;
 

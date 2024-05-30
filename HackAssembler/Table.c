@@ -13,7 +13,7 @@ void initialize(Table* table)
 	}
 	for (int i = 0; i < table->capacity; i++)
 	{
-		table->symbols[i] = (char*)malloc(MAX_STRING_LENGTH * sizeof(char));
+		table->symbols[i] = (char*)malloc(MAX_SYMBOL_LENGTH * sizeof(char));
 		if (!table->symbols[i])
 		{
 			fprintf(stderr, "Could not allocate memory for symbol table.");
@@ -33,14 +33,14 @@ void delete(Table* table)
 
 void addEntry(Table* table, char* symbol, int address)
 {
-	if (strlen(symbol) + 1 > MAX_STRING_LENGTH)
+	if (strlen(symbol) + 1 > MAX_SYMBOL_LENGTH)
 	{
 		fprintf(stderr, "Symbol length too long");
 		exit(1);
 	}
 	if (table->count == table->capacity)
 		increaseSize(table);
-	strcpy_s(table->symbols[table->count], MAX_STRING_LENGTH, symbol);
+	strcpy_s(table->symbols[table->count], MAX_SYMBOL_LENGTH, symbol);
 	table->addresses[table->count++] = address;
 }
 
@@ -72,7 +72,7 @@ static void increaseSize(Table* table)
 	table->addresses = (int*)malloc(table->capacity * sizeof(int));
 	if (table->symbols && table->addresses)
 		for (int i = 0; i < table->capacity; i++)
-			table->symbols[i] = (char*)malloc(MAX_STRING_LENGTH * sizeof(char));
+			table->symbols[i] = (char*)malloc(MAX_SYMBOL_LENGTH * sizeof(char));
 	else
 	{
 		fprintf(stderr, "Could not increase size of symbol table.");
@@ -83,7 +83,7 @@ static void increaseSize(Table* table)
 	{
 		if (*(table->symbols + i))
 		{
-			strcpy_s(*(table->symbols + i), MAX_STRING_LENGTH, tempSymbols[i]);
+			strcpy_s(*(table->symbols + i), MAX_SYMBOL_LENGTH, tempSymbols[i]);
 			*(table->addresses + i) = tempAddresses[i];
 		}
 		else

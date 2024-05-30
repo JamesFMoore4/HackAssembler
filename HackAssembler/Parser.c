@@ -20,16 +20,16 @@ void symbol(const char* instr, char* buffer)
 {
 	if (instructionType(instr) == L_INSTRUCTION)
 	{
-		char temp[MAX_STRING_LENGTH];
+		char temp[MAX_SYMBOL_LENGTH];
 		int i, pos;
 		for (i = 0, pos = 0; instr[i]; i++)
 			if (instr[i] != '(' && instr[i] != ')')
 				temp[pos++] = instr[i];
 		temp[pos] = '\0';
-		strcpy_s(buffer, MAX_STRING_LENGTH, temp);
+		strcpy_s(buffer, MAX_SYMBOL_LENGTH, temp);
 	}
 	else
-		strcpy_s(buffer, MAX_STRING_LENGTH, instr + 1);
+		strcpy_s(buffer, MAX_SYMBOL_LENGTH, instr + 1);
 }
 
 void destP(const char* instr, char* buffer)
@@ -77,18 +77,18 @@ void jumpP(const char* instr, char* buffer)
 
 void trim(const char* instr, char* buffer)
 {
-	char temp[MAX_INSTR_LENGTH];
+	char temp[MAX_LINE_LENGTH];
 	int i, pos;
 	for (i = 0, pos = 0; instr[i]; i++)
 	{
 		if (instr[i] == '/' && instr[i + 1] == '/')
 			break;
-		if (instr[i] == ' ' || instr[i] == '\t')
+		if (instr[i] == ' ' || instr[i] == '\t' || instr[i] == '\n')
 			continue;
 		temp[pos++] = instr[i];
 	}
 	temp[pos] = '\0';
-	strcpy_s(buffer, MAX_INSTR_LENGTH, temp);
+	strcpy_s(buffer, MAX_LINE_LENGTH, temp);
 }
 
 static bool containsP(const char* str, char c)

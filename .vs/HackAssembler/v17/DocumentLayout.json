@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\VSProjects\\HackAssembler\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|D:\\VSProjects\\HackAssembler\\HackAssembler\\HackAssembler.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A9482B43-8080-4F2B-B6E6-B9E88795470C}|HackAssembler\\HackAssembler.vcxproj|solutionrelative:HackAssembler\\HackAssembler.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HackAssembler.c",
-              "DocumentMoniker": "D:\\VSProjects\\HackAssembler\\HackAssembler\\HackAssembler.c",
-              "RelativeDocumentMoniker": "HackAssembler\\HackAssembler.c",
-              "ToolTip": "D:\\VSProjects\\HackAssembler\\HackAssembler\\HackAssembler.c",
-              "RelativeToolTip": "HackAssembler\\HackAssembler.c",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAB0AAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-05-30T15:31:14.037Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

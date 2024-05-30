@@ -162,3 +162,4 @@ bool isValidPath(char* path)
 
 	return true;
 }
+
